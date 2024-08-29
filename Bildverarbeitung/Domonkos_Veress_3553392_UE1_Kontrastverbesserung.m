@@ -12,10 +12,10 @@ figure(2);imhist(I);title('Histogramm Originalbild');
 
 %% Linear skaliertes Histogramm 
 % Bestimmung max. und min. Gruawerte skallierung und offset
-min_I=double (min(I(:)))
-max_I=double (max(I(:)))
-scale=( 255.0 - 0.)/( max_I - min_I)
-offset=(max_I * 0.-min_I*255.)/(max_I - min_I)
+min_I=double (min(I(:)));
+max_I=double (max(I(:)));
+scale=( 255.0 - 0.)/( max_I - min_I);
+offset=(max_I * 0.-min_I*255.)/(max_I - min_I);
 
 % int8 zwischen 0 und 255 -> umformen in int16 (-32768 to 32767)
 I_stretch=int16(I)* scale + offset;
